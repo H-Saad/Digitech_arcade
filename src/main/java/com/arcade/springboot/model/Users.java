@@ -1,5 +1,7 @@
 package com.arcade.springboot.model;
 
+import java.util.ArrayList;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -25,15 +27,18 @@ public class Users {
 	private String password;
 	@Column(name="points")
 	private int points;
+	@Column(name="answered_questions")
+	private ArrayList<Integer> answered_questions;
 	@Column(name="banned")
 	private boolean banned;
 	
 	public Users() {
 		this.banned = false;
+		this.answered_questions = new ArrayList<Integer>();
 	}
 
 	public Users(int id, String fullname, String major, String phone, String email, String password, int points,
-			boolean banned) {
+			ArrayList<Integer> answered_questions,boolean banned) {
 		this.id = id;
 		this.fullname = fullname;
 		this.major = major;
@@ -42,6 +47,7 @@ public class Users {
 		this.password = password;
 		this.points = points;
 		this.banned = banned;
+		this.answered_questions = answered_questions;
 	}
 
 	public int getId() {
@@ -107,4 +113,14 @@ public class Users {
 	public void setBanned(boolean banned) {
 		this.banned = banned;
 	}
+
+	public ArrayList<Integer> getAnswered_questions() {
+		return answered_questions;
+	}
+
+	public void setAnswered_questions(ArrayList<Integer> answered_questions) {
+		this.answered_questions = answered_questions;
+	}
+	
+	
 }

@@ -25,6 +25,8 @@ public class Question {
 	private ArrayList<String> choices;
 	@Column(name="answer")
 	private String answer;
+	@Column(name="original_pts")
+	private int original_pts;
 	@Column(name="points")
 	private int points;
 	@Column(name="min_pts")
@@ -40,7 +42,7 @@ public class Question {
 	}
 
 	public Question(int id, String title, String body, String type, ArrayList<String> choices, String answer,
-			int points, int min_pts, int dec_value, boolean archived) {
+			int original_pts, int points, int min_pts, int dec_value, boolean archived) {
 		this();
 		this.id = id;
 		this.title = title;
@@ -49,6 +51,7 @@ public class Question {
 		this.choices = choices;
 		this.answer = answer;
 		this.points = points;
+		this.original_pts = original_pts;
 		this.min_pts = min_pts;
 		this.dec_value = dec_value;
 		this.archived = archived;
@@ -133,5 +136,14 @@ public class Question {
 	public void setArchived(boolean archived) {
 		this.archived = archived;
 	}
+
+	public int getOriginal_pts() {
+		return original_pts;
+	}
+
+	public void setOriginal_pts(int original_pts) {
+		this.original_pts = original_pts;
+	}
+	
 	
 }
