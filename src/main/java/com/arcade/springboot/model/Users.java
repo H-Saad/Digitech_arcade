@@ -35,6 +35,7 @@ public class Users {
 	public Users() {
 		this.banned = false;
 		this.answered_questions = new ArrayList<Integer>();
+		this.points = 0;
 	}
 
 	public Users(int id, String fullname, String major, String phone, String email, String password, int points,
